@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>ORBIT | Dashboard</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+
+    <div class="dashboard-body">
+        <aside class="sidebar">
+            <div class="sidebar-logo">
+                <i class="fa-solid fa-satellite-dish"></i> ORBIT
+            </div>
+            
+            <div class="sidebar-menu">
+                <p class="menu-label">SERVER MANAGEMENT</p>
+                <a href="#" class="menu-item active"><i class="fa-solid fa-chart-pie"></i> Overview</a>
+                <a href="#" class="menu-item"><i class="fa-solid fa-shield-halved"></i> Moderation</a>
+                <a href="#" class="menu-item"><i class="fa-solid fa-robot"></i> Automations</a>
+                <a href="#" class="menu-item"><i class="fa-solid fa-id-card"></i> Auto-Roles</a>
+                
+                <p class="menu-label mt-4">SYSTEM</p>
+                <a href="#" class="menu-item"><i class="fa-solid fa-clock-rotate-left"></i> Audit Logs</a>
+                <a href="#" class="menu-item"><i class="fa-solid fa-gear"></i> Settings</a>
+            </div>
+
+            <div class="sidebar-footer">
+                <a href="index.html" class="menu-item"><i class="fa-solid fa-house"></i> Back to Home</a>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <header class="topbar">
+                <div class="server-info">
+                    <div class="server-icon"><i class="fa-brands fa-discord"></i></div>
+                    <h2>My Awesome Server</h2>
+                </div>
+                <div class="user-profile">
+                    <span>Admin User</span>
+                    <div class="avatar"><i class="fa-solid fa-user"></i></div>
+                </div>
+            </header>
+
+            <div class="dashboard-container">
+                <div class="page-header">
+                    <h1>Overview & Modules</h1>
+                    <p>Enable or disable core features for your server.</p>
+                </div>
+
+                <div class="modules-grid">
+                    <div class="module-card">
+                        <div class="module-header">
+                            <div class="module-title">
+                                <i class="fa-solid fa-shield-halved" style="color: var(--accent-cyan);"></i>
+                                <h3>Auto-Moderation</h3>
+                            </div>
+                            <label class="toggle-switch">
+                                <input type="checkbox" checked>
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                        <p>Automatically delete spam, bad words, and malicious links to keep your chat clean.</p>
+                        <button class="btn-config">Configure</button>
+                    </div>
+
+                    <div class="module-card">
+                        <div class="module-header">
+                            <div class="module-title">
+                                <i class="fa-solid fa-hand-sparkles" style="color: #ffbd2e;"></i>
+                                <h3>Welcome Messages</h3>
+                            </div>
+                            <label class="toggle-switch">
+                                <input type="checkbox">
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                        <p>Send customized greeting cards and DM messages to new members joining the server.</p>
+                        <a href="welcome-config.html" class="btn-config" style="display:block; text-align:center; text-decoration:none;">Configure</a>
+                    </div>
+
+                    <div class="module-card">
+                        <div class="module-header">
+                            <div class="module-title">
+                                <i class="fa-solid fa-id-card" style="color: #27c93f;"></i>
+                                <h3>Auto-Roles</h3>
+                            </div>
+                            <label class="toggle-switch">
+                                <input type="checkbox" checked>
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                        <p>Assign default roles to new members or create reaction-role menus automatically.</p>
+                        <a href="welcome-config.html" class="btn-config" style="display:block; text-align:center; text-decoration:none;">Configure</a>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+<script src="dashboard.js"></script>
+</body>
+</html>
