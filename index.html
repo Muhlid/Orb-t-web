@@ -2,201 +2,189 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ORBIT | Your Professional Command Center</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>ORBIT | All-in-One Command Center</title>
+    
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="dashboard.css">
+
+    <style>
+        /* SPA Yönetimi İçin Görünürlük Ayarları */
+        .page-section { display: none; }
+        .page-section.active { display: block; }
+        
+        /* Dashboard sayfasında header'ı gizlemek gerekebilir */
+        body.dashboard-mode header { display: none; }
+        body.dashboard-mode footer { display: none; }
+    </style>
 </head>
 <body>
 
-    <header>
-        <div class="logo">
-            <i class="fa-solid fa-satellite-dish"></i> ORBIT
-        </div>
-        <nav class="nav-links">
-            <a href="#features">Features</a>
-            <a href="#pricing">Premium</a>
-            <a href="#">Documentation</a>
-        </nav>
-        <div class="header-actions">
-             <a href="#" class="btn-discord"><i class="fa-brands fa-discord"></i> Dashboard</a>
-        </div>
-    </header>
+    <div id="home-page" class="page-section active">
+        <header>
+            <div class="logo"><i class="fa-solid fa-satellite-dish"></i> ORBIT</div>
+            <nav class="nav-links">
+                <a href="#features">Features</a>
+                <a href="#pricing">Premium</a>
+                <a href="#faq">FAQ</a>
+            </nav>
+            <div class="header-actions">
+                <a href="javascript:void(0)" class="btn-discord" onclick="showPage('dashboard-page')">
+                    <i class="fa-brands fa-discord"></i> Dashboard
+                </a>
+            </div>
+        </header>
 
-    <section class="hero">
-        <div class="hero-content">
-            <h1>Elevate Your Server with <span class="highlight">Advanced AI</span></h1>
-            <p>ORBIT is the ultimate command center integration. Automate workflows, track activities, and manage your community with unprecedented ease.</p>
-            <div class="hero-btns">
-                <a href="#" class="btn-primary">Add to Discord</a>
-                <a href="#features" class="btn-secondary">Explore Features</a>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Elevate Your Server with <span class="highlight">Advanced AI</span></h1>
+                <p>ORBIT is the ultimate command center integration. Automate workflows and manage your community.</p>
+                <div class="hero-btns">
+                    <a href="javascript:void(0)" class="btn-primary" onclick="showPage('dashboard-page')">Get Started</a>
+                    <a href="#features" class="btn-secondary">Explore Features</a>
+                </div>
             </div>
-        </div>
-        <div class="hero-gradient-overlay"></div>
-    </section>
-  
-      <section class="stats">
-        <div class="stat-item">
-            <h3 class="stat-number">2,500<span>+</span></h3>
-            <p>Active Servers</p>
-        </div>
-        <div class="stat-item">
-            <h3 class="stat-number">1.2<span>M</span></h3>
-            <p>Users Managed</p>
-        </div>
-        <div class="stat-item">
-            <h3 class="stat-number">99.9<span>%</span></h3>
-            <p>Uptime</p>
-        </div>
-    </section>
+            <div class="hero-gradient-overlay"></div>
+        </section>
 
-    <section class="dashboard-preview">
-        <div class="section-header">
-            <h2>Intuitive Web Dashboard</h2>
-            <p>Configure modules, check logs, and manage your community effortlessly from your browser.</p>
-        </div>
-        <div class="mockup-wrapper">
-            <div class="browser-mockup">
-                <div class="browser-header">
-                    <span class="dot red"></span>
-                    <span class="dot yellow"></span>
-                    <span class="dot green"></span>
-                </div>
-                <div class="mockup-content">
-                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop" alt="ORBIT Dashboard Interface">
-                    <div class="mockup-overlay"></div>
-                </div>
-            </div>
-        </div>
-    </section>
+        <section class="stats">
+            <div class="stat-item"><h3 class="stat-number">2,500<span>+</span></h3><p>Active Servers</p></div>
+            <div class="stat-item"><h3 class="stat-number">1.2<span>M</span></h3><p>Users Managed</p></div>
+            <div class="stat-item"><h3 class="stat-number">99.9<span>%</span></h3><p>Uptime</p></div>
+        </section>
 
-    <section id="features" class="features">
-        <div class="section-header">
-            <h2>System Capabilities</h2>
-            <p>Discover how ORBIT can revolutionize your operations.</p>
-        </div>
-        <div class="grid">
-            <div class="card">
-                <div class="card-icon-container">
-                    <i class="fa-solid fa-bolt"></i>
-                </div>
-                <h3>Automated Workflows</h3>
-                <p>Streamline complex processes and reduce manual intervention. ORBIT handles the repetitive tasks.</p>
+        <section id="features" class="features">
+            <div class="section-header"><h2>System Capabilities</h2></div>
+            <div class="grid">
+                <div class="card"><i class="fa-solid fa-bolt"></i><h3>Automated Workflows</h3><p>Streamline complex processes.</p></div>
+                <div class="card card-featured"><i class="fa-solid fa-shield-halved"></i><h3>Advanced Moderation</h3><p>Safe and organized environment.</p></div>
             </div>
-            <div class="card">
-                <div class="card-icon-container">
-                    <i class="fa-solid fa-chart-line"></i>
-                </div>
-                <h3>Real-Time Analytics</h3>
-                <p>Gain valuable insights with live tracking and detailed reporting. Make data-driven decisions.</p>
-            </div>
-            <div class="card card-featured">
-                 <div class="card-icon-container">
-                    <i class="fa-solid fa-shield-halved"></i>
-                </div>
-                <h3>Advanced Moderation</h3>
-                <p>Maintain a safe and organized environment with powerful, automated moderation tools.</p>
-            </div>
-             <div class="card">
-                <div class="card-icon-container">
-                    <i class="fa-solid fa-id-card"></i>
-                </div>
-                <h3>Smart Role Management</h3>
-                <p>Automatically assign and update roles based on activity, achievements, and custom rules.</p>
-            </div>
-        </div>
-    </section>
-  
-      <section id="faq" class="faq-section">
-        <div class="section-header">
-            <h2>Frequently Asked Questions</h2>
-            <p>Everything you need to know about ORBIT.</p>
-        </div>
-        <div class="faq-container">
-            <div class="faq-item">
-                <button class="faq-question">
-                    Is ORBIT safe to use on my server? 
-                    <i class="fa-solid fa-chevron-down"></i>
-                </button>
-                <div class="faq-answer">
-                    <p>Absolutely. ORBIT is built with security in mind. It only asks for the permissions it strictly needs and we never store sensitive message data. Our infrastructure is protected by enterprise-grade security.</p>
-                </div>
-            </div>
-            
-            <div class="faq-item">
-                <button class="faq-question">
-                    How do I set up the dashboard? 
-                    <i class="fa-solid fa-chevron-down"></i>
-                </button>
-                <div class="faq-answer">
-                    <p>Once you invite the bot to your server, simply click "Login" at the top of this page using your Discord account. You'll instantly see all the servers you manage and can start configuring modules.</p>
-                </div>
-            </div>
+        </section>
 
-            <div class="faq-item">
-                <button class="faq-question">
-                    Can I cancel my Pro Plan anytime? 
-                    <i class="fa-solid fa-chevron-down"></i>
-                </button>
-                <div class="faq-answer">
-                    <p>Yes! There are no long-term contracts. You can cancel your Pro Plan subscription at any time directly from your billing dashboard, and you will retain premium features until the end of your billing cycle.</p>
+        <section id="faq" class="faq-section">
+            <div class="section-header"><h2>FAQ</h2></div>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <button class="faq-question">How do I set up? <i class="fa-solid fa-chevron-down"></i></button>
+                    <div class="faq-answer"><p>Click the Dashboard button at the top!</p></div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="pricing" class="pricing">
-        <div class="section-header">
-             <h2>Choose Your Integration Level</h2>
-             <p>Scale ORBIT's power to match your community's needs.</p>
-        </div>
-        <div class="pricing-grid">
-            <div class="price-card">
-                <div class="price-header">
-                    <h3>Base Plan</h3>
-                    <p class="plan-desc">Essential features for growing servers.</p>
+        <footer>
+            <div class="footer-content">
+                <p>&copy; 2026 ORBIT Technologies.</p>
+                <div class="footer-links"><a href="#">Privacy</a><a href="#">Terms</a></div>
+            </div>
+        </footer>
+    </div>
+
+    <div id="dashboard-page" class="page-section">
+        <div class="dashboard-body">
+            <aside class="sidebar">
+                <div class="sidebar-logo"><i class="fa-solid fa-satellite-dish"></i> ORBIT</div>
+                <div class="sidebar-menu">
+                    <p class="menu-label">MANAGEMENT</p>
+                    <a href="javascript:void(0)" class="menu-item active"><i class="fa-solid fa-chart-pie"></i> Overview</a>
+                    <a href="javascript:void(0)" class="menu-item"><i class="fa-solid fa-shield-halved"></i> Moderation</a>
+                    <p class="menu-label mt-4">SYSTEM</p>
+                    <a href="javascript:void(0)" class="menu-item" onclick="showPage('home-page')"><i class="fa-solid fa-house"></i> Home</a>
                 </div>
-                <div class="price">$0 <span>/ month</span></div>
-                <ul>
-                    <li><i class="fa-solid fa-check"></i> Core Workflow Automation</li>
-                    <li><i class="fa-solid fa-check"></i> Basic Activity Tracking</li>
-                    <li><i class="fa-solid fa-check"></i> General Command Access</li>
-                    <li><i class="fa-solid fa-xmark unavailable"></i> Custom Branding</li>
-                    <li><i class="fa-solid fa-xmark unavailable"></i> Priority Support</li>
-                </ul>
-                <a href="#" class="btn-full disabled">Current Plan</a>
-            </div>
+            </aside>
 
-            <div class="price-card premium">
-                <div class="premium-badge">TOP TIER</div>
-                <div class="price-header">
-                    <h3>Pro Plan</h3>
-                    <p class="plan-desc">Maximum power, zero compromise.</p>
+            <main class="main-content">
+                <header class="topbar">
+                    <div class="server-info"><div class="server-icon"><i class="fa-brands fa-discord"></i></div><h2>My Awesome Server</h2></div>
+                    <div class="user-profile"><span>Admin User</span><div class="avatar"><i class="fa-solid fa-user"></i></div></div>
+                </header>
+
+                <div class="dashboard-container">
+                    <div class="page-header"><h1>Modules</h1><p>Enable/Disable features.</p></div>
+                    <div class="modules-grid">
+                        <div class="module-card">
+                            <div class="module-header"><h3>Auto-Moderation</h3><label class="toggle-switch"><input type="checkbox" checked><span class="slider"></span></label></div>
+                            <p>Keep your chat clean.</p>
+                            <button class="btn-config" onclick="showPage('config-page')">Configure</button>
+                        </div>
+                        <div class="module-card">
+                            <div class="module-header"><h3>Welcome Messages</h3><label class="toggle-switch"><input type="checkbox"><span class="slider"></span></label></div>
+                            <p>Greet new members.</p>
+                            <button class="btn-config" onclick="showPage('config-page')">Configure</button>
+                        </div>
+                    </div>
                 </div>
-                <div class="price">$9.99 <span>/ month</span></div>
-                <ul>
-                    <li><i class="fa-solid fa-check"></i> Everything in Base Plan</li>
-                    <li><i class="fa-solid fa-check"></i> Custom Bot Name & Avatar</li>
-                    <li><i class="fa-solid fa-check"></i> 24/7 Advanced Analytics</li>
-                    <li><i class="fa-solid fa-check"></i> API & Webhook Access</li>
-                    <li><i class="fa-solid fa-check"></i> Dedicated Priority Support</li>
-                </ul>
-                <a href="#" class="btn-full btn-premium">Upgrade to Pro</a>
-            </div>
+            </main>
         </div>
-    </section>
+    </div>
 
-    <footer>
-        <div class="footer-content">
-            <p>&copy; 2026 ORBIT Technologies. All rights reserved.</p>
-            <div class="footer-links">
-                <a href="#">Privacy Policy</a>
-                <a href="#">Terms of Service</a>
-            </div>
+    <div id="config-page" class="page-section">
+        <div class="dashboard-body">
+            <aside class="sidebar">
+                <div class="sidebar-logo"><i class="fa-solid fa-satellite-dish"></i> ORBIT</div>
+                <div class="sidebar-menu">
+                    <a href="javascript:void(0)" class="menu-item" onclick="showPage('dashboard-page')"><i class="fa-solid fa-arrow-left"></i> Back</a>
+                </div>
+            </aside>
+            <main class="main-content">
+                <div class="dashboard-container config-container">
+                    <div class="page-header config-header">
+                        <h1>Welcome Messages</h1>
+                        <label class="toggle-switch"><input type="checkbox" checked><span class="slider"></span></label>
+                    </div>
+                    <div class="config-card">
+                        <form id="orbit-config-form">
+                            <div class="form-group">
+                                <label>Welcome Channel</label>
+                                <select class="form-control"><option># general</option><option selected># welcome</option></select>
+                            </div>
+                            <div class="form-group">
+                                <label>Message</label>
+                                <textarea class="form-control" rows="4">Hey {user}, welcome!</textarea>
+                            </div>
+                            <div class="form-actions">
+                                <button type="submit" class="btn-save">Save Changes</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </main>
         </div>
-    </footer>
+    </div>
 
     <script src="app.js"></script>
+    <script src="dashboard.js"></script>
+
+    <script>
+        // SAYFA YÖNETİM SİHRİ (SPA)
+        function showPage(pageId) {
+            // Tüm sayfaları gizle
+            document.querySelectorAll('.page-section').forEach(section => {
+                section.classList.remove('active');
+            });
+
+            // Hedef sayfayı göster
+            document.getElementById(pageId).classList.add('active');
+
+            // Dashboard modundaysak body class ekle (Header/Footer gizlemek için)
+            if(pageId === 'dashboard-page' || pageId === 'config-page') {
+                document.body.classList.add('dashboard-mode');
+                window.scrollTo(0,0);
+            } else {
+                document.body.classList.remove('dashboard-mode');
+            }
+        }
+
+        // Form Gönderildiğinde Dashboard'a Dönme
+        document.getElementById('orbit-config-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            // dashboard.js içindeki showNotification burada çalışacaktır.
+            setTimeout(() => {
+                showPage('dashboard-page');
+            }, 1000);
+        });
+    </script>
 </body>
 </html>
